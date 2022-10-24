@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Categories</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>USER INFO:</h2>
+<div> IP Address: <th:block th:text="${ipAddress}"></th:block></div>
+<div> Client Agent: <th:block th:text="${clientAgent}"></th:block></div>
+
+<h2>Categories</h2>
+<ul>
+    <li th:each="category : ${categories}"> <th:block th:text="${category.name}"></th:block></li>
+</ul>
+
+<h3>Add a new category</h3>
+<form th:method='POST' th:action='@{/servlet/category}'>" +
+    <label for='name'>Name:</label><input id='name' type='text' name='name'/>
+    <label for='desc'>Description:</label><input id='desc' type='text' name='desc'/>
+    <input type='submit' value='Submit'/>"
+    </form>
+</body>
+</html>
