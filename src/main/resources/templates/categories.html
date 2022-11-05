@@ -5,9 +5,19 @@
 </head>
 <body>
 
+<h2>REQUEST INFO:</h2>
+<div class="error"> IP Address: <th:block th:text="${ipAddress}"></th:block></div>
+<div class="error"> Client Agent: <th:block th:text="${clientAgent}"></th:block></div>
+
+<th:block th:if="${session.user != null}">
 <h2>USER INFO:</h2>
-<div> IP Address: <th:block th:text="${ipAddress}"></th:block></div>
-<div> Client Agent: <th:block th:text="${clientAgent}"></th:block></div>
+<div class="error"> Username: <th:block th:text="${session.user.username}"></th:block></div>
+<div class="error"> Name: <th:block th:text="${session.user.name}"></th:block></div>
+<div class="error"> Surname: <th:block th:text="${session.user.surname}"></th:block></div>
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+</th:block>
 
 <h2>Categories</h2>
 <ul>
