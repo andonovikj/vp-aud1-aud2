@@ -29,13 +29,13 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public User register(String username, String password, String repeatPassword, String name, String surname) {
+    public User register(String username, String password, String repeatedPassword, String name, String surname) {
         if (username == null || username.isEmpty() || password == null || password.isEmpty())
         {
             throw new InvalidArgumentException();
         }
 
-        if (!password.equals(repeatPassword)){
+        if (!password.equals(repeatedPassword)){
             throw new PasswordsDoNotMatchException();
         }
 
